@@ -9,7 +9,7 @@ class MarketDisplay extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      month: "Jan",
+      month: "January",
       day: "Mon"
     };
   }
@@ -34,28 +34,28 @@ class MarketDisplay extends React.Component {
 
     const monthDropdown =
       <select name="monthSelect">
-        <option>Jan</option>
-        <option>Feb</option>
-        <option>Mar</option>
-        <option>Apr</option>
-        <option>Jun</option>
-        <option>Jul</option>
-        <option>Aug</option>
-        <option>Sep</option>
-        <option>Oct</option>
-        <option>Nov</option>
-        <option>Dec</option>
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
       </select>;
 
     const dayDropdown =
     <select name="daySelect">
-      <option>Mon</option>
-      <option>Tue</option>
-      <option>Wed</option>
-      <option>Thu</option>
-      <option>Fri</option>
-      <option>Sat</option>
-      <option>Sun</option>
+      <option>Monday</option>
+      <option>Tuesday</option>
+      <option>Wednesday</option>
+      <option>Thursday</option>
+      <option>Friday</option>
+      <option>Saturday</option>
+      <option>Sunday</option>
     </select>;
     
     return (
