@@ -10,7 +10,7 @@ class MarketDisplay extends React.Component {
     super(props);
     this.state = {
       month: "January",
-      day: "Mon"
+      day: "Monday"
     };
   }
 
@@ -53,7 +53,6 @@ class MarketDisplay extends React.Component {
       <option>Tuesday</option>
       <option>Wednesday</option>
       <option>Thursday</option>
-      <option>Friday</option>
       <option>Saturday</option>
       <option>Sunday</option>
     </select>;
