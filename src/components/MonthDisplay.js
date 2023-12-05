@@ -270,10 +270,6 @@ const availableProduce = [
   }
 ];
 
-const conversionTable = [
-
-]
-
 function MonthDisplay(props) {
   const monthProduce = availableProduce.filter(produce => (produce.month === props.month));
   return(
@@ -282,8 +278,8 @@ function MonthDisplay(props) {
       <div className='monthDisplayDiv'>
         <p> Available Produce for {props.month}:</p>
         {
-          monthProduce[0].selection.map(product => (
-            <li>{product}</li>
+          monthProduce[0].selection.map((product,index) => (
+            <li key={index}>{product}</li>
           ))
         }
       </div>
