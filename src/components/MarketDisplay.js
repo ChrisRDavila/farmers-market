@@ -59,6 +59,7 @@ class MarketDisplay extends React.Component {
     
     return (
       <React.Fragment>
+        <h1>Avery's Organics Farm Schedule</h1>
         <form onSubmit={this.handleSubmit}>
         {monthDropdown}
         {dayDropdown}
