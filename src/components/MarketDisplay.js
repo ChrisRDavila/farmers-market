@@ -1,6 +1,6 @@
 import React from "react";
-import MonthSelector from "./MonthDisplay";
-import DaySelector from "./DayDisplay";
+import MonthDisplay from "./MonthDisplay";
+import DayDisplay from "./DayDisplay";
 import ProduceDisplay from "./ProduceDisplay";
 
 
@@ -9,19 +9,25 @@ class MarketDisplay extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      month: props.month,
-      day: props.day
+      month: "Jan",
+      day: "Mon"
     };
   }
 
-  handleSubmit = () => {
-    // get value of monthDropdown and dayDropdown when submit is pressed
-    // would use this.setState({month: (value of monthDropdown), day: (value of dayDropdown)})
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const selectedMonth = event.target.monthSelect.value;
+    const selectedDay = event.target.daySelect.value;
+    this.setState({
+      month: selectedMonth,
+      day: selectedDay 
+    });
+    console.log(this.state);
   }
 
   render() {
     let monthDropdown =
-      <select id="monthSelect">
+      <select name="monthSelect">
         <option>Jan</option>
         <option>Feb</option>
         <option>Mar</option>
@@ -36,7 +42,7 @@ class MarketDisplay extends React.Component {
       </select>;
 
     let dayDropdown =
-    <select id="daySelect">
+    <select name="daySelect">
       <option>Sun</option>
       <option>Mon</option>
       <option>Tue</option>
@@ -46,7 +52,7 @@ class MarketDisplay extends React.Component {
       <option>Sat</option>
     </select>;
     
-    let submitButton = <button onClick={this.handleSubmit}>Check Availability</button>;
+    // let submitButton = <button onClick={this.handleSubmit}>Check Availability</button>;
     
     
 
@@ -54,14 +60,17 @@ class MarketDisplay extends React.Component {
     
     return (
       <React.Fragment>
-        <form>
+        <form onSubmit={this.handleSubmit}>
         {monthDropdown}
         {dayDropdown}
-        {submitButton}
+        {/* {submitButton} */}
+        <button type="submit">Check Availability</button>
         </form>
         
-        <MonthSelector />
-        <DaySelector />
+        <MonthDisplay 
+          month = {this.month}
+          />
+        <DayDisplay />
         {/* <ProduceDisplay /> */}
       </React.Fragment>
     )
