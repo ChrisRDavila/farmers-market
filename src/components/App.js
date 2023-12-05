@@ -1,10 +1,14 @@
 import '../App.css';
+import MarketDisplay from './MarketDisplay';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         
+        <MarketDisplay 
+        />
+
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
