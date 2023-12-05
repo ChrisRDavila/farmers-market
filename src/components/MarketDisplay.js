@@ -1,7 +1,6 @@
 import React from "react";
 import MonthDisplay from "./MonthDisplay";
 import DayDisplay from "./DayDisplay";
-import ProduceDisplay from "./ProduceDisplay";
 
 
 class MarketDisplay extends React.Component {
@@ -30,7 +29,6 @@ class MarketDisplay extends React.Component {
   render() {
     const displayedMonth = <MonthDisplay month = {this.state.month}/>
     const displayedDay = <DayDisplay day = {this.state.day}/>
-    const displayedProduce = <ProduceDisplay />
 
     const monthDropdown =
       <select name="monthSelect">
@@ -69,7 +67,6 @@ class MarketDisplay extends React.Component {
         
         {displayedMonth}
         {displayedDay}
-        {displayedProduce}
       </React.Fragment>
     )
   }
