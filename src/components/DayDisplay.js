@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 function DayDisplay(props) {
   return(
     <React.Fragment>
-      <div>
-        {props.day}
+      <div className='dayDisplayDiv'>
+        <p>{props.day}</p>
       </div>
     </React.Fragment>
   )

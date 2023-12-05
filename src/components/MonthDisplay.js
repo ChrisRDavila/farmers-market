@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 function MonthDisplay(props) {
   return(
     <React.Fragment>
-      <div>
-        {props.month}
+      <div className='monthDisplayDiv'>
+        <p>{props.month}</p>
       </div>
     </React.Fragment>
   );

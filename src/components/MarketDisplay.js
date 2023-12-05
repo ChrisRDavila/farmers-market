@@ -14,6 +14,8 @@ class MarketDisplay extends React.Component {
     };
   }
 
+  
+
   handleSubmit = (event) => {
     event.preventDefault();
     const selectedMonth = event.target.monthSelect.value;
@@ -22,11 +24,15 @@ class MarketDisplay extends React.Component {
       month: selectedMonth,
       day: selectedDay 
     });
-    console.log(this.state);
+    this.render();
   }
 
   render() {
-    let monthDropdown =
+    const displayedMonth = <MonthDisplay month = {this.state.month}/>
+    const displayedDay = <DayDisplay day = {this.state.day}/>
+    const displayedProduce = <ProduceDisplay />
+
+    const monthDropdown =
       <select name="monthSelect">
         <option>Jan</option>
         <option>Feb</option>
@@ -41,22 +47,16 @@ class MarketDisplay extends React.Component {
         <option>Dec</option>
       </select>;
 
-    let dayDropdown =
+    const dayDropdown =
     <select name="daySelect">
-      <option>Sun</option>
       <option>Mon</option>
       <option>Tue</option>
       <option>Wed</option>
       <option>Thu</option>
       <option>Fri</option>
       <option>Sat</option>
+      <option>Sun</option>
     </select>;
-    
-    // let submitButton = <button onClick={this.handleSubmit}>Check Availability</button>;
-    
-    
-
-
     
     return (
       <React.Fragment>
@@ -67,11 +67,9 @@ class MarketDisplay extends React.Component {
         <button type="submit">Check Availability</button>
         </form>
         
-        <MonthDisplay 
-          month = {this.month}
-          />
-        <DayDisplay />
-        {/* <ProduceDisplay /> */}
+        {displayedMonth}
+        {displayedDay}
+        {displayedProduce}
       </React.Fragment>
     )
   }
