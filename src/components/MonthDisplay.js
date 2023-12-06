@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import bgImage from "../img/farmers-market.jpg"
 
 const availableProduce = [  
   {  
@@ -271,11 +272,26 @@ const availableProduce = [
 ];
 
 function MonthDisplay(props) {
+   const newStyle = {
+      backgroundImage: `url(${bgImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgrounRepeat: 'no-repeat',
+      backgrounAttachment: 'fixed',
+      // backgroundColor: '#ffff00',
+      // fontFamily: 'HVD Rowdy',
+      fontFamily: ['HVD Rowdy', "sans-serif"],
+      color: "#ff4500",
+      fontSize: 30
+     }
   const monthProduce = availableProduce.filter(produce => (produce.month === props.month));
+  
+  
   return(
     <React.Fragment>
+      <link href="https://fonts.cdnfonts.com/css/hvd-rowdy" rel="stylesheet"></link>
       <hr />
-      <div className='monthDisplayDiv'>
+      <div style={newStyle} className='monthDisplayDiv'>
         <p> Available Produce for {props.month}:</p>
         {
           monthProduce[0].selection.map((product,index) => (
@@ -286,6 +302,7 @@ function MonthDisplay(props) {
     </React.Fragment>
   );
 }
+
 
 
 MonthDisplay.propTypes = {
