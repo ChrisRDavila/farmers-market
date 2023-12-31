@@ -1,5 +1,7 @@
 # Farmers Market
 
+Practice with React UI to handle state and display days and products for a farmers market from given array 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
